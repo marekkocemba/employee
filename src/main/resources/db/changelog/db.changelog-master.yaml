@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-employees
+      author: mkocemba
+      changes:
+      - createTable:
+          tableName: employees
+          columns:
+          - column:
+              name: id
+              type: bigint
+              autoIncrement: true
+              constraints:
+              - primaryKeyName: id_employee_pk
+              - primaryKey: true
+              - nullable: false
+          - column:
+              name: first_name
+              type: varchar(20)
+              constraints:
+                - nullable: false
+          - column:
+              name: last_name
+              type: varchar(20)
+              constraints:
+                - nullable: false
+          - column:
+              name: age
+              type: int
+          - column:
+              name: gender
+              type: varchar(10)
+  - changeSet:
+      id: create-table-addresses
+      author: mkocemba
+      changes:
+      - createTable:
+          tableName: addresses
+          columns:
+          - column:
+              name: id
+              type: bigint
+              autoIncrement: true
+              constraints:
+              - primaryKeyName: id_address_pk
+              - primaryKey: true
+              - nullable: false
