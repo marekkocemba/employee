@@ -45,3 +45,29 @@ databaseChangeLog:
               - primaryKeyName: id_address_pk
               - primaryKey: true
               - nullable: false
+          - column:
+              name: employee_id
+              type: bigint
+              constraints:
+                - foreignKeyName: id_employee_fk
+                - references: employees(id)
+                - nullable: false
+          - column:
+              name: country
+              type: varchar(20)
+              constraints:
+              - nullable: false
+          - column:
+              name: city
+              type: varchar(30)
+              constraints:
+                - nullable: false
+          - column:
+              name: street
+              type: varchar(20)
+          - column:
+              name: house_number
+              type: varchar(10)
+          - column:
+              name: flat_number
+              type: varchar(10)
