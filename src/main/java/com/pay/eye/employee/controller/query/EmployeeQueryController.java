@@ -1,6 +1,6 @@
 package com.pay.eye.employee.controller.query;
 
-import com.pay.eye.employee.dto.EmployeeDto;
+import com.pay.eye.employee.service.EmployeeDto;
 import com.pay.eye.employee.service.query.EmployeeQueryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,9 +1,12 @@
 package com.pay.eye.employee.model;
 
-import com.pay.eye.employee.dto.EmployeeDto;
+import com.pay.eye.address.model.Address;
+import com.pay.eye.employee.service.EmployeeDto;
 import com.pay.eye.employee.enums.Gender;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name="employees")
@@ -20,15 +23,17 @@ public class Employee {
     private Integer age;
     @Enumerated(EnumType.STRING)
     private Gender gender;
+    @OneToMany(mappedBy="employee", cascade = CascadeType.ALL)
+    private List<Address> addresses;
+
+    public Employee() {
+
+    }
 
     public Employee(EmployeeDto employeeDto) {
 
         this.id = employeeDto.getId();
         updateFields(employeeDto);
-    }
-
-    public Employee() {
-
     }
 
     public void updateFields(EmployeeDto employeeDto) {
@@ -37,6 +42,10 @@ public class Employee {
         this.lastName = employeeDto.getLastName();
         this.age = employeeDto.getAge();
         this.gender = employeeDto.getGender();
+        this.addresses = employeeDto.getAddresses()
+                .stream()
+                .map(address -> new Address(address, this))
+                .collect(Collectors.toList());
     }
 
     public Long getId() {
@@ -57,5 +66,9 @@ public class Employee {
 
     public Gender getGender() {
         return gender;
+    }
+
+    public List<Address> getAddresses() {
+        return addresses;
     }
 }

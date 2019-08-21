@@ -1,6 +1,6 @@
 package com.pay.eye.employee.controller.command;
 
-import com.pay.eye.employee.dto.EmployeeDto;
+import com.pay.eye.employee.service.EmployeeDto;
 import com.pay.eye.employee.service.command.EmployeeCommandService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

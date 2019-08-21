@@ -1,6 +1,6 @@
 package com.pay.eye.employee.service.command;
 
-import com.pay.eye.employee.dto.EmployeeDto;
+import com.pay.eye.employee.service.EmployeeDto;
 import com.pay.eye.employee.model.Employee;
 import com.pay.eye.employee.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
