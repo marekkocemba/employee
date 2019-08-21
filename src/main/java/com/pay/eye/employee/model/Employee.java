@@ -27,6 +27,10 @@ public class Employee {
         updateFields(employeeDto);
     }
 
+    public Employee() {
+
+    }
+
     public void updateFields(EmployeeDto employeeDto) {
 
         this.firstName = employeeDto.getFirstName();
